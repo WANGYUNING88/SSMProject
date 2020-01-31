@@ -15,7 +15,7 @@
     <!--视图解析器-->
     <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
         <!--前缀：文件的目录或者路径-->
-        <property name="prefix" value="/WEB-INF/pages"/>
+        <property name="prefix" value="/WEB-INF/pages/"/>
         <!--后缀：跳转的文件后缀名-->
         <property name="suffix" value=".jsp"/>
     </bean>

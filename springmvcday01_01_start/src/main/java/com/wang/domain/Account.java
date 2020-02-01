@@ -1,13 +1,33 @@
 package com.wang.domain;
 
 import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
 
 public class Account implements Serializable {
     private String username;
     private String psd;
     private Double money;
 
-    private User user;
+    private List<User> list;
+    private Map<String,User> map;
+
+    public List<User> getList() {
+        return list;
+    }
+
+    public void setList(List<User> list) {
+        this.list = list;
+    }
+
+    public Map<String, User> getMap() {
+        return map;
+    }
+
+    public void setMap(Map<String, User> map) {
+        this.map = map;
+    }
+    /*private User user;
 
     public User getUser() {
         return user;
@@ -15,7 +35,7 @@ public class Account implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
-    }
+    }*/
 
     public String getUsername() {
         return username;
@@ -47,7 +67,8 @@ public class Account implements Serializable {
                 "username='" + username + '\'' +
                 ", psd='" + psd + '\'' +
                 ", money=" + money +
-                ", user=" + user +
+                ", list=" + list +
+                ", map=" + map +
                 '}';
     }
 }

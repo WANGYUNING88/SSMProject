@@ -15,13 +15,36 @@
     <ol>
         <li>验证方法demo （<a href="param/testParam">测试</a>是否成功）</li>
         <li>传参单例多例（?后面接参数，使用&连接多个参数） （<a href="param/testParam?username=1&psd=1">测试</a>是否成功）</li>
-        <li>提交表单<br>
+        <li>提交表单(1) 单例  <br>
+            *把数据封装到Account类中*<br>
             <form action="param/saveAccount" method="post">
                 姓名：<input type="text" name="username"/><br>
                 密码：<input type="text" name="psd"/><br>
                 金额：<input type="text" name="money"/><br>
                 用户姓名：<input type="text" name="user.uname"/><br>
                 用户年龄：<input type="text" name="user.age"/><br>
+                <input type="submit" value="提交">
+            </form>
+        </li>
+        <li>提交表单(2)集合<br>
+            *把数据封装到Account类中，类中存在list和map集合*<br>
+            <form action="param/saveAccount" method="post">
+                姓名：<input type="text" name="username"/><br>
+                密码：<input type="text" name="psd"/><br>
+                金额：<input type="text" name="money"/><br>
+                用户1姓名：<input type="text" name="list[0].uname"/><br>
+                用户1年龄：<input type="text" name="list[0].age"/><br>
+                用户2姓名：<input type="text" name="map['one'].uname"/><br>
+                用户2年龄：<input type="text" name="map['one'].age"/><br>
+                <input type="submit" value="提交">
+            </form>
+        </li>
+        <li>提交表单(3)自定义类型转化器<br>
+            *把数据封装到User类中,包含日期*<br>
+            <form action="param/saveUser" method="post">
+                用户姓名：<input type="text" name="uname"/><br>
+                用户年龄：<input type="text" name="age"/><br>
+                用户生日：<input type="text" name="date"/><br>
                 <input type="submit" value="提交">
             </form>
         </li>

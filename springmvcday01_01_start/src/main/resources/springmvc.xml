@@ -19,8 +19,18 @@
         <!--后缀：跳转的文件后缀名-->
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <!-- 配置自定义类型转换器 -->
+    <bean id="conversionServiceFactoryBean" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.wang.utils.StringToDateConverter" />
+            </set>
+        </property>
+    </bean>
+
     <!-- 开启MVC注解驱动 -->
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven conversion-service="conversionServiceFactoryBean"/>
     <!-- 配置静态资源用WEB容器默认的servlet来处理 -->
     <mvc:default-servlet-handler/>
 

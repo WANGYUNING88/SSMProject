@@ -20,6 +20,7 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+    <!-- 配置解决中文乱码问题的过滤器 -->
     <filter>
         <filter-name>characterEncodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>

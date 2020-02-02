@@ -11,7 +11,7 @@
     <title>常用注解</title>
 </head>
 <body>
-    <h3>常用注解</h3>
+<h3>常用注解</h3>
     <ol>
         <li>RequestParam请求参数 （<a href="anno/testRequestParam?name=测试">测试</a>是否成功）</li>
         <li>RequestBody请求体 <br>
@@ -53,7 +53,27 @@
                     </form>
                 </li>
             </ol>
-
+        </li>
+        <li>RequestHeader 请求头 （<a href="anno/testRequestHeader">测试</a>是否成功）</li>
+        <li>CookieValue cookie值 （<a href="anno/testCookieValue">测试</a>是否成功）</li>
+        <li>ModelAttribute <br>
+        <form action="anno/testModelAttribute" method="post">
+                用户姓名：<input type="text" name="uname"/><br>
+                用户年龄：<input type="text" name="age"/><br>
+                <input type="submit" value="提交">
+            </form>
+        <li>SessionAttributes<br>
+            <ul>
+                <li>
+                    保存attributes  （<a href="anno/testSessionAttributes">测试</a>是否成功）
+                </li>
+                <li>
+                    获取attributes  （<a href="anno/getSessionAttributes">测试</a>是否成功）
+                </li>
+                <li>
+                    删除attributes  （<a href="anno/delSessionAttributes">测试</a>是否成功）
+                </li>
+            </ul>
         </li>
     </ol>
 </body>

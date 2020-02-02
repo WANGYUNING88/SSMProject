@@ -5,10 +5,10 @@
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.wang</groupId>
-	<artifactId>springmvc-day01_01_start</artifactId>
+	<artifactId>springmvc_day01_01_start</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>springmvc-day01_01_start Maven Webapp</name>
+	<name>springmvc_day01_01_start Maven Webapp</name>
 	<url>http://www.example.com</url>
 	<properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -62,7 +62,7 @@
     </dependencies>
 
 	<build>
-        <finalName>springmvc-day01_01_start</finalName>
+        <finalName>springmvc_day01_01_start</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>

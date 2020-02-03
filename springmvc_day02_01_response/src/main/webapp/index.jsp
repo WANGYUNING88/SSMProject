@@ -8,13 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>RESPONSE</title>
+    <title>Day02</title>
 </head>
 <body>
-    <h2>RESPONSE</h2>
+    <h2>Day02</h2>
     <ol>
         <li>
             项目初始搭建配置--><a href="testRun">TEST</a>
+        </li>
+        <li>
+            RESPONSE--><a href="./response.jsp">GO</a>
         </li>
     </ol>
 

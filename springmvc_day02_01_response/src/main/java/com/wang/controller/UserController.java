@@ -1,9 +1,11 @@
 package com.wang.controller;
 
-import com.wang.com.wang.domain.User;
+import com.wang.domain.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletException;
@@ -81,7 +83,26 @@ public class UserController {
     public String testForwardOrRedirect(){
         System.out.println("【testForwardOrRedirect】 执行了...");
         //请求转发
-        return "forward:/WEB-INF/pages/success.jsp";
+        //return "forward:/WEB-INF/pages/success.jsp";
+        //重定向
+        return "redirect:/index.jsp";
+    }
+
+    /**
+     * 模拟异步请求和响应的过程
+     * @return
+     */
+    @RequestMapping("testAjax")
+    public @ResponseBody User testAjax(@RequestBody User user){
+        System.out.println("【testAjax】 执行了...");
+        //客户端发送的ajax的请求，传入的参数是json字符串，后端把json封装到实体类中
+        System.out.println(user);
+        //模拟数据库的操作
+        user.setUsername("测试修改");
+        user.setAge(18);
+        //做出响应
+        return user;
+
     }
 
 }

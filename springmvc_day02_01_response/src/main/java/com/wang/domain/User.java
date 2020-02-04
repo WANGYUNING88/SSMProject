@@ -1,4 +1,4 @@
-package com.wang.com.wang.domain;
+package com.wang.domain;
 
 public class User {
     private String username;

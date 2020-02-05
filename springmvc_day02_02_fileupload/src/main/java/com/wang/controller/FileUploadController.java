@@ -86,4 +86,23 @@ public class FileUploadController {
         upload.transferTo(new File(path,filename));
         return "success";
     }
+    /**
+     * 跨服务器上传
+     * @param request
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping("fileupload3")
+    public String fileupload3(HttpServletRequest request , MultipartFile upload) throws Exception {
+        System.out.println("文件上传3...");
+        String path = "http://localhost:9090/fileuploadserver_war_exploded/uploads/";
+        //说明上传文件项
+        //获取上传文件的名称
+        String filename = upload.getOriginalFilename();
+        //生成一个唯一id
+        String uuid = UUID.randomUUID().toString().replace("_", "");
+        filename = uuid + "_" + filename;
+        //完成跨服务器上传功能
+        return "success";
+    }
 }

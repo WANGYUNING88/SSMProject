@@ -2,6 +2,7 @@ package com.wang.ssmtest.controller;
 
 import java.awt.image.RenderedImage;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Map;
 
 import javax.imageio.ImageIO;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.wang.ssmtest.utils.DateUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,10 +25,10 @@ import com.wang.ssmtest.utils.IpUtils;
 @Controller
 public class CodeController {
 	@RequestMapping("/code")
-	public void getCode(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public void getCode(HttpServletRequest request, HttpServletResponse response,@RequestParam(value = "timestamp", defaultValue = "1581128682335") String timestamp) throws IOException {
 		HttpSession session = request.getSession();
 		Map<String, Object> map = CodeUtil.generateCodeAndPic(true);
-		System.out.println("验证码的值为：" + map.get("code"));
+		System.out.println("验证码为：" + map.get("code"));
 		session.setAttribute("code", map.get("code").toString());
 		// 禁止图像缓存。
         response.setHeader("Pragma", "no-cache");
@@ -47,7 +49,7 @@ public class CodeController {
 		}
 		String codeOne = request.getSession().getAttribute("code").toString();
 		code = code.toUpperCase();
-		System.out.println("处理后code为【"+code+"】");
+		System.out.println("处理后的【"+code+"】");
 		return Msg.success().add("result", code.equals(codeOne));
 	}
 }

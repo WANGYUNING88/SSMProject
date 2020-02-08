@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -26,7 +27,7 @@
 	请输入验证码：
 	<input type="text" class="form-control" id="exampleInputName2"
 		placeholder="请输入验证码">
-	<img id="imgObj" alt="验证码" src="${APP_PATH}/code" onclick="changeImg()" />
+	<img id="imgObj" alt="验证码" src="" onclick="changeImg()" />
 	<button type="button" class="btn btn-primary btn-sm" onclick="code()">
 		<span class="glyphicon glyphicon-off" aria-hidden="true"></span> 验证
 	</button>
@@ -37,15 +38,18 @@
 	<div class="alert alert-danger" role="alert" id="danger_200">系统错误</div>
 	<br>
 	<div class="list-group">
-		<a href="${APP_PATH}/toListJsp" class="list-group-item"> emps </a> <a
-			href="${APP_PATH}/code" class="list-group-item"> code </a> <a
-			href="${APP_PATH}/isCode" class="list-group-item"> isCode </a>
+		<a href="toListJsp" class="list-group-item"> emps </a>
+		<a href="code" class="list-group-item"> code </a>
+		<a href="isCode" class="list-group-item"> isCode </a>
+		<a href="toTest" class="list-group-item"> teTest </a>
 	</div>
 </body>
 <script type="text/javascript">
 	$(function() {
 		hide();
 	});
+	const imgUrl = "http://localhost:8080/ssmtest_war_exploded/code?timestamp=";
+	changeImg();
 	function hide(){
 		$("#success").hide();
 		$("#warning").hide();
@@ -60,7 +64,7 @@
 			return ;
 		}
 		$.ajax({
-			url : "${APP_PATH}/isCode",
+			url : "isCode",
 			data : "code="+code,
 			type : "GET",
 			success : function(result) {
@@ -74,7 +78,10 @@
 				}
 			}
 		});
-		changeImg();	
+		setTimeout(function(){
+			changeImg();
+		},500);
+
 	}
 	function changeImg() {
 		var imgSrc = $("#imgObj");
@@ -86,13 +93,7 @@
 	// 为了使每次生成图片不一致，即不让浏览器读缓存，所以需要加上时间戳
 	function chgUrl(url) {
 		var timestamp = (new Date()).valueOf();
-		url = url.substring(0, 20);
-		if ((url.indexOf("&") >= 0)) {
-			url = url + "×tamp=" + timestamp;
-		} else {
-			url = url + "?timestamp=" + timestamp;
-		}
-		return url;
+		return imgUrl+timestamp;
 	}
 </script>
 </html>

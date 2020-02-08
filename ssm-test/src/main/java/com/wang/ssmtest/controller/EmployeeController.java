@@ -3,7 +3,6 @@ package com.wang.ssmtest.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.jdt.internal.compiler.util.Sorting;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,7 +34,7 @@ public class EmployeeController {
 	/**
 	 * 员工删除
 	 * id格式为1-2-3
-	 * @param id
+	 * @param ids
 	 * @return
 	 */
 	@RequestMapping(value="/emp/{ids}",method=RequestMethod.DELETE)

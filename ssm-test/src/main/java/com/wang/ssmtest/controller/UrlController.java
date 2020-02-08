@@ -8,8 +8,11 @@ public class UrlController {
 
 	@RequestMapping("toListJsp")
 	public String toListJsp() {
-		System.out.println("Ìø×ªµ½listÒ³Ãæ");
 		return "list";
 	}
-	
+	@RequestMapping("toTest")
+	public String toTest() {
+		return "test";
+	}
+
 }

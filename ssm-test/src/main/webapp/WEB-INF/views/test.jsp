@@ -14,10 +14,7 @@
 </head>
 <body>
 <div id="loading">
-    <div class="overlay"></div>
-    <div id="AjaxLoading" class="showbox">
-        <div class="loadingWord"><img src="${APP_PATH}/static/common/images/common/waiting.gif">加载中，请稍候...</div>
-    </div>
+
 </div>
 
 

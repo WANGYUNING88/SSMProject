@@ -26,6 +26,13 @@
 <body>
 <!--引入头部JSP-->
 <jsp:include page="head.jsp"></jsp:include>
+<!-- loading -->
+<div class="overlay"></div>
+<div id="AjaxLoading" class="showbox">
+    <div class="loadingWord"><img src="${APP_PATH}/static/common/images/common/waiting.gif">正在上传图片，请务刷新</div>
+</div>
+
+<!-- main -->
 <div class="form-group">
     <label for="exampleInputEmail1">Username</label>
     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Username">
@@ -41,8 +48,8 @@
 <form enctype="multipart/form-data" id="fileForm">
     <div class="form-group">
         <label for="exampleInputFile">Image input</label><br>
-        <img id="image" src="${APP_PATH}/static/common/images/common/image.jpeg" alt="头像" class="img-thumbnail">
-        <input onchange="upload()" name="file" type="file" id="exampleInputFile" accept=".jpg,.jpeg,.png"/>
+        <img id="image" src="${APP_PATH}/file/show?filename=default" alt="image.jpeg" class="img-thumbnail">
+        <input onchange="upload('#exampleInputFile')" name="file" type="file" id="exampleInputFile" accept=".jpg,.jpeg,.png"/>
     </div>
 </form>
    <%-- <div class="checkbox">
@@ -57,27 +64,7 @@
 
     });
 
-    /**
-     * 头像上传
-     */
-    function upload(){
-        var formData = new FormData();
-        var files = document.getElementById("exampleInputFile").files;
-        if(files.length==0)
-            return;
-        formData.append("fileName", files[0]);
-        $.ajax({
-            url : "file/upload",
-            type : "POST",
-            data : formData,
-            contentType : false,
-            processData : false,
-            success : function(result) {
 
-            },
-        });
-        //return filename;
-    }
 </script>
 </html>
 

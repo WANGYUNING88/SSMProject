@@ -5,6 +5,8 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FileUitls {
     /**
@@ -30,11 +32,12 @@ public class FileUitls {
      * @param fileName 源文件名
      * @return
      */
-    public static boolean upload(MultipartFile file, String path, String fileName) {
+    public static Map<String,Object> upload(MultipartFile file, String path, String fileName) {
 
-
+        Map<String,Object> map = new HashMap<String, Object>();
         // 生成新的文件名
-        String realPath = path + getFileName(fileName);
+        String newFilename = getFileName(fileName);
+        String realPath = path + newFilename;
 
         //使用原文件名
        /* String realPath = path + fileName;*/
@@ -49,11 +52,15 @@ public class FileUitls {
         try {
             //保存文件
             file.transferTo(dest);
-            return true;
+            map.put("flag",true);
+            map.put("filename",newFilename);
+            return map;
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            return false;
+            map.put("flag",false);
+            map.put("filename","default");
+            return map;
         }
 
     }

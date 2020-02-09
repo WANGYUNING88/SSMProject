@@ -12,6 +12,7 @@
     <%
         pageContext.setAttribute("APP_PATH", request.getContextPath());
     %>
+
     <!-- Bootstrap -->
     <link
             href="${APP_PATH}/static/bootstrap-3.3.7-dist/css/bootstrap.min.css"
@@ -24,6 +25,10 @@
             src="${APP_PATH}/static/bootstrap-3.3.7-dist/js/bootstrap.min.js">
 
     </script>
+
+    <link rel="stylesheet" href="${APP_PATH}/static/common/css/common/loading.css">
+    <script type="text/javascript" src="${APP_PATH}/static/common/js/common/loading.js"></script>
+    <script type="text/javascript" src="${APP_PATH}/static/common/js/common/fileutils.js"></script>
     <script>
         //显示检验结果
         function shou_validate_msg(ele, status, msg) {

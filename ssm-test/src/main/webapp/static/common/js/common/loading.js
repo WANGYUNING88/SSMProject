@@ -11,9 +11,10 @@ function loading_start() {
 }
 
 function loading_end() {
+    setTimeout(function () {
+        $(".showbox").stop(true).animate({'margin-top': '250px', 'opacity': '0'}, 400);
 
-    $(".showbox").stop(true).animate({'margin-top': '250px', 'opacity': '0'}, 400);
-
-    $(".overlay").css({'display': 'none', 'opacity': '0'});
+        $(".overlay").css({'display': 'none', 'opacity': '0'});
+    },1000);
 
 }

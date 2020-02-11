@@ -28,7 +28,7 @@
 
     <link rel="stylesheet" href="${APP_PATH}/static/common/css/common/loading.css">
     <script type="text/javascript" src="${APP_PATH}/static/common/js/common/loading.js"></script>
-    <script type="text/javascript" src="${APP_PATH}/static/common/js/common/fileutils.js"></script>
+<%--    <script type="text/javascript" src="${APP_PATH}/static/common/js/common/fileutils.js"></script>--%>
     <script>
         //显示检验结果
         function shou_validate_msg(ele, status, msg) {
@@ -41,6 +41,45 @@
                 $(ele).parent().addClass("has-error");
                 $(ele).next("span").text(msg);
             }
+        }
+        /**
+         * 头像上传
+         */
+        function upload(eleFile,eleImg) {
+            loading_start();
+            var formData = new FormData();
+            var files = $(eleFile).get(0).files;
+
+            if (files.length == 0)
+                return;
+            formData.append("fileName", files[0]);
+            $.ajax({
+                url: "file/upload",
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (result) {
+                    console.log(result);
+                    show(result.extend.filename,eleImg);
+                },
+                error:function () {
+                    console.log("22");
+                }
+            });
+            loading_end();
+        }
+
+        /**
+         * 展示图片
+         */
+        function show(filename, ele) {
+            console.log("filename",filename);
+            if (filename == null || filename.length == 0) {
+                return;
+            }
+            $(ele).attr("src", "${APP_PATH}/file/show?filename=" + filename);
+            $(ele).attr("alt", filename);
         }
     </script>
 </head>

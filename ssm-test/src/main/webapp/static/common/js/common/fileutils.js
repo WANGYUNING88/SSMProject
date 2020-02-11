@@ -16,8 +16,12 @@ function upload(eleFile,eleImg) {
         contentType: false,
         processData: false,
         success: function (result) {
+            console.log(result);
             show(result.extend.filename,eleImg);
         },
+        error:function () {
+            console.log("22");
+        }
     });
     loading_end();
 }
@@ -26,20 +30,9 @@ function upload(eleFile,eleImg) {
  * 展示图片
  */
 function show(filename, ele) {
-    if (filename == null || filename.length == 0)
+    console.log("filename",filename);
+    if (filename == null || filename.length == 0) {
         return;
-    $(ele).attr("alt", filename).attr("src", "${APP_PATH}/file/show?filename=" + filename);
-    /* $.ajax({
-         url: "file/show",
-         dataType:"json",
-         url:"user/testAjax",
-         contentType:"application/json;charset=UTF-8",
-         data:'{"username":"王","psd":"123","age":20}',
-         dataType:"json",
-         type:"POST",
-         success:function (result) {
-             //result:服务器返回的json数据。进行解析
-             alert(result.toString());
-         }
-     });*/
+    }
+    $(ele).attr("src", ${APP_PATH}+"/file/show?filename=" + filename);
 }

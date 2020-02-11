@@ -3,6 +3,8 @@ package com.wang.ssmtest.test;
 import java.util.List;
 import java.util.UUID;
 
+import com.wang.ssmtest.bean.User;
+import com.wang.ssmtest.dao.UserMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,16 +34,21 @@ public class MapperTest {
 	
 	@Autowired
 	EmployeeMapper employeeMapper;
+
+	@Autowired
+	UserMapper userMapper;
 	
 	@Autowired
 	SqlSession sqlSession;
 	
 	@Test
 	public void testCRUD() {
+
+
 		
-		List<Employee> selectByExampleWithDept = employeeMapper.selectByExampleWithDept(null);
+/*		List<Employee> selectByExampleWithDept = employeeMapper.selectByExampleWithDept(null);
 		Employee employee = selectByExampleWithDept.get(0);
-		System.out.println(employee.getDepartment().getDeptName());
+		System.out.println(employee.getDepartment().getDeptName());*/
 		
 //		//方法一：
 //		//1.创建IOC容器
@@ -82,5 +89,14 @@ public class MapperTest {
 		//5.删除员工
 //		int result = employeeMapper.deleteByPrimaryKey(1006);
 //		System.out.println("result = "+result);
+
+		/*User user = userMapper.selectByPrimaryKey(1);
+		System.out.println(user);*/
+		//int i = userMapper.insert(new User(null, "wangyuning", "123", null));
+/*		User admin = userMapper.selectByExample(new User(null, "admin", "123", null));
+		User wanguning = userMapper.selectByExample(new User(null, "wanguning", "123", null));
+
+		System.out.println(admin);
+		System.out.println(wanguning);*/
 	}
 }

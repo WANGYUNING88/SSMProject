@@ -35,6 +35,12 @@
             <if test="id != null">
                 id,
             </if>
+            <if test="username != null">
+                username,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
 
             <if test="image != null">
                 image,

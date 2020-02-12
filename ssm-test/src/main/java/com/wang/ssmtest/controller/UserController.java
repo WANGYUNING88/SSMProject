@@ -5,6 +5,7 @@ import com.wang.ssmtest.bean.User;
 import com.wang.ssmtest.service.UserService;
 import com.wang.ssmtest.service.impl.UserImpl;
 import com.wang.ssmtest.utils.ConstUtils;
+import com.wang.ssmtest.utils.PasswordUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -64,6 +65,9 @@ public class UserController {
     @RequestMapping("login")
     @ResponseBody
     public Msg loginUser(HttpSession session, User user){
+        String encrypt = PasswordUtils.encrypt(user.getPassword());
+        user.setPassword(encrypt);
+        System.out.println(user);
         User result = userService.selectByExample(user);
         if(result!=null){
             session.setAttribute("user",user);
@@ -88,6 +92,9 @@ public class UserController {
     @RequestMapping("register")
     @ResponseBody
     public Msg registerUser(User user){
+        String encrypt = PasswordUtils.encrypt(user.getPassword());
+        user.setPassword(encrypt);
+        System.out.println(user);
         boolean insert = userService.insert(user);
         if(insert){
             return Msg.success();

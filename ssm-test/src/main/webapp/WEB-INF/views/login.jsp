@@ -28,7 +28,7 @@
     <div class="form-group">
         <label for="inputUsername3" class="col-sm-2 control-label">Username</label>
         <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputUsername3" placeholder="Email">
+            <input type="email" class="form-control" id="inputUsername3" placeholder="Username">
         </div>
     </div>
     <div class="form-group">
@@ -56,6 +56,9 @@
 </div>
 </body>
 <script>
+    /**
+     * 获取头像
+     */
     $("#inputUsername3").blur(function () {
         var username = $(this).val();
         if (username==null||username.length==0)
@@ -74,6 +77,21 @@
                     alert("用户名错误或不存在！");
                     show(data.extend.filename,"#image");
                 }
+            }
+        });
+    });
+    $("#login").click(function () {
+        var username = $("#inputUsername3").val();
+        var password = $("#inputPassword3").val();
+        $.ajax({
+            url:"user/login",
+            type: "post",
+            data:{
+                "username":username,
+                "password":password,
+            },
+            success:function (data) {
+                console.log(data);
             }
         });
     });

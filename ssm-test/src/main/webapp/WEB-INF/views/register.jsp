@@ -70,12 +70,13 @@
         if (psd1 == psd2) {
             var username = $("#exampleInputName1").val();
             var image = $("#image").prop("alt");
-            console.log("【pas:】" + psd1);
+            console.log("【pad:】" + psd1);
             console.log("【username:】" + username);
             console.log("【image:】" + image);
             $.ajax({
                 url: "user/register",
                 type:"post",
+                cache:false,
                 data:{
                     "username":username,
                     "password":psd1,

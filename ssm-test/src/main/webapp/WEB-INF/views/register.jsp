@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>login</title>
+    <title>register</title>
     <%
         pageContext.setAttribute("APP_PATH", request.getContextPath());
     %>
@@ -59,6 +59,9 @@
      </label>
  </div>--%>
 <button type="button" id="register" class="btn btn-default">Submit</button>
+<div class="alert alert-info" role="alert">
+    <strong>已有账号</strong> 我要 <a href="toLogin" class="alert-link">登录</a>了。
+</div>
 </body>
 <script>
     $("#register").click(function () {

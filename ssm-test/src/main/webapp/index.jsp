@@ -42,7 +42,8 @@
 		<a href="code" class="list-group-item"> code </a>
 		<a href="isCode" class="list-group-item"> isCode </a>
 		<a href="toTest" class="list-group-item"> teTest </a>
-		<a href="toRegister" class="list-group-item"> toRegister </a>
+		<a href="toRegister" class="list-group-item"> register </a>
+		<a href="toLogin" class="list-group-item"> login </a>
 	</div>
 </body>
 <script type="text/javascript">

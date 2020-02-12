@@ -63,9 +63,6 @@
                     console.log(result);
                     show(result.extend.filename,eleImg);
                 },
-                error:function () {
-                    console.log("22");
-                }
             });
             loading_end();
         }

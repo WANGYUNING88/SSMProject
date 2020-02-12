@@ -39,6 +39,21 @@ public class UserController {
             return Msg.fail().add("msg","用户名已存在");
         }
     }
+    /**
+     * 查询头像名称根据username
+     * @param username
+     * @return
+     */
+    @RequestMapping("selectImageByUsername")
+    @ResponseBody
+    public Msg selectImageByUsername(@RequestParam(value = "username",defaultValue = ConstUtils.DEFAULT)String username) {
+        User user = userService.selectByExample(new User(null, username, null, null));
+        if(user!=null){
+            return Msg.success().add("filename",user.getImage());
+        }else {
+            return Msg.fail().add("filename",ConstUtils.DEFAULT);
+        }
+    }
 
     /**
      * 登录

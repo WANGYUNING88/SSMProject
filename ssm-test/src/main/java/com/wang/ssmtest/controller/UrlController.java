@@ -18,5 +18,9 @@ public class UrlController {
 	public String toRegister() {
 		return "register";
 	}
+	@RequestMapping("toLogin")
+	public String toLogin() {
+		return "login";
+	}
 
 }

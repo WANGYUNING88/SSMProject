@@ -93,10 +93,10 @@ public class MapperTest {
 		/*User user = userMapper.selectByPrimaryKey(1);
 		System.out.println(user);*/
 		//int i = userMapper.insert(new User(null, "wangyuning", "123", null));
-/*		User admin = userMapper.selectByExample(new User(null, "admin", "123", null));
+		User admin = userMapper.selectByExample(new User(null, "admin", null, null));
 		User wanguning = userMapper.selectByExample(new User(null, "wanguning", "123", null));
 
 		System.out.println(admin);
-		System.out.println(wanguning);*/
+		System.out.println(wanguning);
 	}
 }

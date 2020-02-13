@@ -21,6 +21,10 @@
 </head>
 <body>
 <jsp:include page="head.jsp"/>
+<div class="overlay"></div>
+<div id="AjaxLoading" class="showbox">
+    <div class="loadingWord"><img src="${APP_PATH}/static/common/images/common/waiting.gif">正在跳转（<a href="toComment" class="alert-link">手动跳转</a>）</div>
+</div>
 <form>
     <div class="form-group">
         <img id="image" src="${APP_PATH}/file/show?filename=default" alt="default" class="img-thumbnail">
@@ -80,6 +84,9 @@
             }
         });
     });
+    /**
+     * 登录
+     */
     $("#login").click(function () {
         var username = $("#inputUsername3").val();
         var password = $("#inputPassword3").val();
@@ -94,7 +101,9 @@
                 console.log(data);
                 if(data.code==100){
                     loading_start();
-                    window.location = "toComment";
+                    setTimeout(function () {
+                        window.location = "toComment";
+                    },5000);
                 }else if(data.code==200){
                     alert("密码错误！");
                 }

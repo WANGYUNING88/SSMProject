@@ -13,43 +13,49 @@
         pageContext.setAttribute("APP_PATH", request.getContextPath());
     %>
     <style>
+        #table-table {
+            margin: 0 auto;
+            text-align: center;
+        }
 
-        .box-info{
-            margin:0 auto; width:60%; height:40%; border:1px solid #F00
-        }
-        .box-info box-operate{
-            padding-bottom: 100%;
-        }
-        #image{
+        #image {
             padding-bottom: 100%;
         }
     </style>
 </head>
 <body>
 <jsp:include page="head.jsp"/>
-
-<div class="box-info">
-    <div class="box-operate">
-        <span class="box-avatar">
+<table id="table-table" border="1px" align="center" cellpadding="10px" cellspacing="0px">
+    <tr height="50px">
+        <th width="200px" rowspan="4" colspan="2"></th>
+        <th width="500px" rowspan="4" colspan="5"></th>
+    </tr>
+    <tr height="50px"></tr>
+    <tr height="50px"></tr>
+    <tr height="50px"></tr>
+    <tr height="50px">
+        <td width="200px" colspan="2"></td>
+        <td width="500px" colspan="5"></td>
+    </tr>
+</table>
 <%--
             <img id="image" src="${APP_PATH}/file/show?filename=default" alt="default" class="img-thumbnail">
 --%>
-        </span>
-        <b class="box-username">请<a href="toLogin" class="alert-link">登录</a></b>
-        <span class="box-operate-line">|</span>
-    </div>
-    <div class="box-commentBtn box-commentBtn--able J_PostBtn" id="J_PostBtn" οnclick="publish_cmt();">
-        发布评论
-    </div>
-</div>
+
 </body>
 <script>
-    $(function(){
+    $(function () {
         console.log("${sessionScope.user}");
-        if(${sessionScope.user!=null}){
-            show("${sessionScope.user.image}","#image");
-            $(".box-username").text("${sessionScope.user.username}");
-        }
+        /* if(
+
+        ${sessionScope.user!=null}){
+            show("
+
+        ${sessionScope.user.image}","#image");
+            $(".box-username").text("
+
+        ${sessionScope.user.username}");
+        }*/
     });
 
 </script>

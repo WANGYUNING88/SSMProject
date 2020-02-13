@@ -70,7 +70,7 @@ public class UserController {
         System.out.println(user);
         User result = userService.selectByExample(user);
         if(result!=null){
-            session.setAttribute("user",user);
+            session.setAttribute("user",result);
             return Msg.success();
         }else {
             return Msg.fail();

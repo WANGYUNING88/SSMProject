@@ -92,6 +92,12 @@
             },
             success:function (data) {
                 console.log(data);
+                if(data.code==100){
+                    loading_start();
+                    window.location = "toComment";
+                }else if(data.code==200){
+                    alert("密码错误！");
+                }
             }
         });
     });

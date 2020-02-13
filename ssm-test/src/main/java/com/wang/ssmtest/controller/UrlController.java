@@ -22,5 +22,9 @@ public class UrlController {
 	public String toLogin() {
 		return "login";
 	}
+	@RequestMapping("toComment")
+	public String toComment() {
+		return "comment";
+	}
 
 }

@@ -44,6 +44,7 @@
 		<a href="toTest" class="list-group-item"> teTest </a>
 		<a href="toRegister" class="list-group-item"> register </a>
 		<a href="toLogin" class="list-group-item"> login </a>
+		<a href="toComment" class="list-group-item"> toComment </a>
 	</div>
 </body>
 <script type="text/javascript">

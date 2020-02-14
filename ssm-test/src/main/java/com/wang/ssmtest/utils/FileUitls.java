@@ -24,7 +24,7 @@ public class FileUitls {
      * @return
      */
     public static String getFileName(String fileOriginName){
-        return DateUtil.getTime(new Date()) + getSuffix(fileOriginName);
+        return DateUtil.getLongByDate(new Date()) + getSuffix(fileOriginName);
     }
     /**
      * @param file     文件

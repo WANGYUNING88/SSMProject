@@ -1,5 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wang.ssmtest.dao.UserMapper">
+<mapper namespace="com.wang.ssmtest.dao.CommentMapper">
 
+    <insert id="insert" parameterType="com.wang.ssmtest.bean.Comment" >
+        INSERT INTO comment
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+
+            <if test="content != null">
+                content,
+            </if>
+
+            <if test="userId != null">
+                userId,
+            </if>
+
+            <if test="articleId != null">
+                articleId,
+            </if>
+
+            <if test="date != null">
+                date,
+            </if>
+
+            <if test="commentId != null">
+                commentId,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+
+            <if test="content != null">
+                #{content,jdbcType=VARCHAR},
+            </if>
+
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+
+            <if test="articleId != null">
+                #{articleId,jdbcType=INTEGER},
+            </if>
+
+            <if test="date != null">
+                #{date,jdbcType=VARCHAR},
+            </if>
+
+            <if test="commentId != null">
+                #{commentId,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
 </mapper>

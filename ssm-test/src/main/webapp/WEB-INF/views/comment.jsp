@@ -51,7 +51,7 @@
             <b class="box-username">未登录，快去<a href="toLogin" class="alert-link">登录</a>吧</b>
         </td>
         <td width="500px" colspan="5">
-            <button type="button" class="btn btn-primary" onclick="submitComment()">发送</button>
+            <button type="button" class="btn btn-primary" onclick="submitComment(null)">发送</button>
         </td>
     </tr>
 </table>
@@ -68,12 +68,24 @@
     /**
      * 提交评论
      */
-    function submitComment() {
+    function submitComment(commentId) {
         if(${sessionScope.user==null}){
             alert("评论前，先登陆一下吧");
         }else {
-            var comment = $(".textarea").val();
-            console.log(comment);
+            var content = $(".textarea").val();
+            $.ajax({
+                url:"comment/saveComment",
+                type:"POST",
+                data:{
+                    content:content,
+                    userId:"${sessionScope.user.id}",
+                    articleId:1,
+                    commentId:commentId
+                },
+                success:function (data) {
+                    console.log(data);
+                }
+            });
             $(".textarea").val("");
         }
     }

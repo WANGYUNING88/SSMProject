@@ -13,7 +13,7 @@
     <bytecodeTargetLevel>
       <module name="springmvcday01_01_start" target="1.8" />
       <module name="ssm-first" target="1.5" />
-      <module name="ssmtest" target="1.5" />
+      <module name="ssmtest" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

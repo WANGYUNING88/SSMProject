@@ -10,6 +10,16 @@ public class Comment {
     private String date;
     private Integer commentId;
 
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "Comment{" +
@@ -17,9 +27,22 @@ public class Comment {
                 ", content='" + content + '\'' +
                 ", userId=" + userId +
                 ", articleId=" + articleId +
-                ", date=" + date +
+                ", date='" + date + '\'' +
                 ", commentId=" + commentId +
+                ", user=" + user +
                 '}';
+    }
+
+    public Comment(Integer id, String content, Integer userId, Integer articleId, String date, Integer commentId) {
+        this.id = id;
+        this.content = content;
+        this.userId = userId;
+        this.articleId = articleId;
+        this.date = date;
+        this.commentId = commentId;
+    }
+
+    public Comment() {
     }
 
     public Integer getId() {

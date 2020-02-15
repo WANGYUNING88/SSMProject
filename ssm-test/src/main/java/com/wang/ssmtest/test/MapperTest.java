@@ -3,7 +3,9 @@ package com.wang.ssmtest.test;
 import java.util.List;
 import java.util.UUID;
 
+import com.wang.ssmtest.bean.Comment;
 import com.wang.ssmtest.bean.User;
+import com.wang.ssmtest.dao.CommentMapper;
 import com.wang.ssmtest.dao.UserMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
@@ -40,6 +42,9 @@ public class MapperTest {
 	
 	@Autowired
 	SqlSession sqlSession;
+
+	@Autowired
+	CommentMapper commentMapper;
 	
 	@Test
 	public void testCRUD() {
@@ -93,10 +98,24 @@ public class MapperTest {
 		/*User user = userMapper.selectByPrimaryKey(1);
 		System.out.println(user);*/
 		//int i = userMapper.insert(new User(null, "wangyuning", "123", null));
-		User admin = userMapper.selectByExample(new User(null, "admin", null, null));
-		User wanguning = userMapper.selectByExample(new User(null, "wanguning", "123", null));
+//		User admin = userMapper.selectByExample(new User(null, "admin", null, null));
+////		User wanguning = userMapper.selectByExample(new User(null, "wanguning", "123", null));
+////
+////		System.out.println(admin);
+////		System.out.println(wanguning);
+		Comment comment = new Comment();
+		comment.setArticleId(1);
+		List<Comment> comments = commentMapper.selectByExample(comment);
+		System.out.println("参数只有setArticleId");
+		for (Comment comment1 : comments){
+			System.out.println(comment1);
+		}
 
-		System.out.println(admin);
-		System.out.println(wanguning);
+		System.out.println("参数有setArticleId和setCommentId");
+		comment.setCommentId(7);
+		comments = commentMapper.selectByExample(comment);
+		for (Comment comment1 : comments){
+			System.out.println(comment1);
+		}
 	}
 }

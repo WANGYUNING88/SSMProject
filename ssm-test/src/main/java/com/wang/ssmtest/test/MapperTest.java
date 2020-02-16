@@ -113,7 +113,7 @@ public class MapperTest {
 
 		System.out.println("参数有setArticleId和setCommentId");
 		comment.setCommentId(7);
-		comments = commentMapper.selectByExample(comment);
+		comments = commentMapper.selectByExampleLv2(comment);
 		for (Comment comment1 : comments){
 			System.out.println(comment1);
 		}

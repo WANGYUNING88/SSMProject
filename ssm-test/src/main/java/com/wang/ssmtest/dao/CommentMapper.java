@@ -16,5 +16,10 @@ public interface CommentMapper {
      * @return
      */
     List<Comment> selectByExample(Comment comment);
+    /**
+     * 查找根据条件
+     * @return
+     */
+    List<Comment> selectByExampleLv2(Comment comment);
 
 }

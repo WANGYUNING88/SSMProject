@@ -75,8 +75,8 @@
                 content,
             </if>
 
-            <if test="userId != null">
-                userId,
+            <if test="userOwnId != null">
+                userOwnId,
             </if>
 
             <if test="articleId != null">
@@ -90,6 +90,12 @@
             <if test="commentId != null">
                 commentId,
             </if>
+            <if test="commentIdId != null">
+                commentIdId,
+            </if>
+            <if test="UserOtherId != null">
+                UserOtherId,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -100,8 +106,8 @@
                 #{content,jdbcType=VARCHAR},
             </if>
 
-            <if test="userId != null">
-                #{userId,jdbcType=INTEGER},
+            <if test="userOwnId != null">
+                #{userOwnId,jdbcType=INTEGER},
             </if>
 
             <if test="articleId != null">
@@ -114,6 +120,12 @@
 
             <if test="commentId != null">
                 #{commentId,jdbcType=INTEGER},
+            </if>
+            <if test="commentIdId != null">
+                #{commentIdId,jdbcType=INTEGER},
+            </if>
+            <if test="UserOtherId != null">
+                #{UserOtherId,jdbcType=INTEGER},
             </if>
         </trim>
     </insert>

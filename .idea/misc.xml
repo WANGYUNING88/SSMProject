@@ -11,6 +11,7 @@
       <list>
         <option value="$PROJECT_DIR$/ssm-test/pom.xml" />
         <option value="$PROJECT_DIR$/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/helloworld/pom.xml" />
       </list>
     </option>
   </component>

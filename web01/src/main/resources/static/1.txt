@@ -1,0 +1,2 @@
+静态资源目录的优先级
+resource > static(默认) > public

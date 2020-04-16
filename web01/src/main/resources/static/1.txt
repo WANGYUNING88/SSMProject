@@ -1,2 +1,4 @@
+thymeleaf的命名空间 xmlns:th="http://www.thymeleaf.org"
+
 静态资源目录的优先级
 resource > static(默认) > public

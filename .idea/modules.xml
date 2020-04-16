@@ -5,7 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/SSMProject.iml" filepath="$PROJECT_DIR$/.idea/SSMProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/helloworld/helloworld.iml" filepath="$PROJECT_DIR$/helloworld/helloworld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-demo01/springboot-demo01.iml" filepath="$PROJECT_DIR$/springboot-demo01/springboot-demo01.iml" />
       <module fileurl="file://$PROJECT_DIR$/ssm-test/ssmtest.iml" filepath="$PROJECT_DIR$/ssm-test/ssmtest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web01/web01.iml" filepath="$PROJECT_DIR$/web01/web01.iml" />
     </modules>
   </component>
 </project>

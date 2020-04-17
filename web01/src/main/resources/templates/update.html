@@ -49,38 +49,38 @@
 				<div th:replace="~{common/commonpage.html::sidebar(active='list.html')}"></div>
 
 				<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-					<h2>员工列表</h2>
-					<br>
-					<a class="btn btn-sm btn-success" th:href="@{/admin/employee/emp}">添加</a>
-					<div class="table-responsive">
-						<table class="table table-striped table-sm">
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>name</th>
-									<th>email</th>
-									<th>gender</th>
-									<th>department</th>
-									<th>birth</th>
-									<th>操作</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr th:each="emp:${list}">
-									<td th:text="${emp.getId()}">xxx</td>
-									<td th:text="${emp.getName()}">xxx</td>
-									<td th:text="${emp.getEmail()}">xxx@xxx.com</td>
-									<td th:text="${emp.getGender()==0?'男':'女'}">xxx</td>
-									<td th:text="${emp.getDepartment().getDeptName()}">xxx</td>
-									<td th:text="${#dates.format(emp.getBirth(),'yyyy-MM-dd HH:mm:ss')}">xxx</td>
-									<td>
-										<a class="btn btn-sm btn-primary" th:href="@{'/admin/employee/emp/'+${emp.getId()}}">修改</a>|
-										<a class="btn btn-sm btn-danger" th:href="@{'/admin/employee/emp/del/'+${emp.getId()}}">删除</a>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+					<form th:action="@{'/admin/employee/emp/'+${employee.getId()}}" method="post">
+						<div class="form-group">
+							<label >Name</label>
+							<input th:value="${employee.getName()}" name="name" type="text" class="form-control"  placeholder="Name">
+						</div>
+						<div class="form-group">
+							<label >Email</label>
+							<input th:value="${employee.getEmail()}" name="email" type="email" class="form-control"  placeholder="Email">
+						</div>
+						<div class="form-group">
+							<label >Gender</label>
+							<div class="form-check form-check-inline">
+								<input th:checked="${employee.getGender()==0}" class="form-check-input" type="radio" name="gender" value="0">
+								<label class="form-check-label" >男</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input th:checked="${employee.getGender()==1}" class="form-check-input" type="radio" name="gender" value="1">
+								<label class="form-check-label" >女</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label >department</label>
+							<select class="form-control" name="department.id">
+								<option th:selected="${dept.getId()==employee.getDepartment().getId()}" th:each="dept:${departments}" th:text="${dept.getDeptName()}" th:value="${dept.getId()}">xx</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label >Birth</label>
+							<input th:value="${#dates.format(employee.getBirth(),'yyyy-MM-dd HH:mm:ss')}" name="birth" type="text" class="form-control"  placeholder="Birth">
+						</div>
+						<button type="submit" class="btn btn-default">修改</button>
+					</form>
 				</main>
 			</div>
 		</div>

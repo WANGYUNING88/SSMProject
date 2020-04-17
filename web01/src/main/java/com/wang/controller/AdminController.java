@@ -9,10 +9,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("admin")
 public class AdminController {
 
-    @RequestMapping("login")
+    @RequestMapping("admin/login")
    // @ResponseBody
     public String login(@RequestParam("username") String username,
                         @RequestParam("password") String password ,
@@ -25,5 +24,11 @@ public class AdminController {
         //登录失败
         model.addAttribute("msg","用户名或密码错误");
         return "index";
+    }
+
+    @RequestMapping("admin/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:index.html";
     }
 }

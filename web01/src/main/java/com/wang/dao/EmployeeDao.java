@@ -33,12 +33,13 @@ public class EmployeeDao {
 
     //+
     public void save(Employee employee){
-        if ((Object)employee.getId() == null){
-            employee.setId(initId);
+        if ((Object)employee.getId() == null || employee.getId() == 0){
+            employee.setId(initId++);
+        }else {
+            this.delete(employee.getId());
         }
         employee.setDepartment(departmentDao.getDepartmentById(employee.getDepartment().getId()));
-        map.put(initId,employee);
-        initId++;
+        map.put(employee.getId(),employee);
     }
 
     //获取全部员工

@@ -10,6 +10,7 @@
         <module name="web01" />
         <module name="ssmtest" />
         <module name="helloworld" />
+        <module name="springboot-data" />
         <module name="springmvcday01_01_start" />
         <module name="springboot-demo01" />
       </profile>
@@ -17,6 +18,7 @@
     <bytecodeTargetLevel>
       <module name="demo" target="1.8" />
       <module name="helloworld" target="1.8" />
+      <module name="springboot-data" target="1.8" />
       <module name="springboot-demo01" target="1.8" />
       <module name="springmvcday01_01_start" target="1.8" />
       <module name="ssm-first" target="1.5" />
@@ -28,6 +30,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="demo" options="-parameters" />
       <module name="helloworld" options="-parameters" />
+      <module name="springboot-data" options="-parameters" />
       <module name="web01" options="-parameters" />
     </option>
   </component>

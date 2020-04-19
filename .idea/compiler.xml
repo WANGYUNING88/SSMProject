@@ -12,6 +12,7 @@
         <module name="helloworld" />
         <module name="springboot-data" />
         <module name="springmvcday01_01_start" />
+        <module name="springboot-security" />
         <module name="springboot-demo01" />
         <module name="springboot-mybatis" />
       </profile>
@@ -22,6 +23,7 @@
       <module name="springboot-data" target="1.8" />
       <module name="springboot-demo01" target="1.8" />
       <module name="springboot-mybatis" target="1.8" />
+      <module name="springboot-security" target="1.8" />
       <module name="springmvcday01_01_start" target="1.8" />
       <module name="ssm-first" target="1.5" />
       <module name="ssmtest" target="8" />
@@ -34,6 +36,7 @@
       <module name="helloworld" options="-parameters" />
       <module name="springboot-data" options="-parameters" />
       <module name="springboot-mybatis" options="-parameters" />
+      <module name="springboot-security" options="-parameters" />
       <module name="web01" options="-parameters" />
     </option>
   </component>

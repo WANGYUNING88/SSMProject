@@ -20,13 +20,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/level3/**").hasRole("vip3");
 
         //没有权限 默认到 登录 页面
-        http.formLogin();
+        http.formLogin()
+                .loginPage("/toLogin")
+                .loginProcessingUrl("/login")
+                .usernameParameter("username")
+                .passwordParameter("password");
 
         //注销 -成功跳到首页
         //防止网站工具 get post
         http.csrf().disable();//关闭csrf功能
         http.logout().logoutSuccessUrl("/");
 
+        //记住我
+        http.rememberMe().rememberMeParameter("remember");
 
     }
 

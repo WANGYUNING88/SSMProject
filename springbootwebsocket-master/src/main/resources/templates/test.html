@@ -1,0 +1,48 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/html">
+	<head>
+		<meta charset="utf-8">
+		<title>匹配测试</title>
+		<script th:src="@{../jquery-2.1.4.js}"></script>
+	</head>
+
+	<body>
+		<input id="username" type="text" required placeholder="请输入昵称" >
+		 <button class="layui-btn" onclick="test()">匹配</button>
+	</body>
+	<script type="text/javascript">
+		function test(){
+			var username = $("#username").val();
+			$(".layui-btn").attr("disabled", true);
+			 $.ajax({
+		            method: 'get',
+		            url: '/matching',
+		            data:{
+		               
+		                username:username
+		                
+		            },
+		            success:function(result) {
+		                
+		            	if ((typeof result == 'object')
+		    					&& result.constructor == Object) {
+		    				data = result;
+		    			} else {
+		    				data = eval("(" + result + ")");
+		    			}
+		            	
+		            	if(data.flag){
+		            		location.href = '/wuziqi';
+		            		window.localStorage.setItem('against',data.msg);
+		            		window.localStorage.setItem('my',username);
+		            		window.localStorage.setItem('main',data.main);
+		            	}else{
+		            		alert(data.msg);
+		            	}
+		            }
+		        });
+			 $(".layui-btn").attr("disabled", false);
+		}
+	</script>
+</html>

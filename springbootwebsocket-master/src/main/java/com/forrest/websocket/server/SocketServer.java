@@ -1,6 +1,5 @@
 package com.forrest.websocket.server;
 
-import com.forrest.websocket.common.Common;
 import com.forrest.websocket.entity.Client;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

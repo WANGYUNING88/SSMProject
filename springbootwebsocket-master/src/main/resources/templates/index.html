@@ -1,29 +1,29 @@
 
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-	xmlns="http://www.w3.org/1999/html">
+	  xmlns="http://www.w3.org/1999/html">
 <link>
-<meta charset="UTF-8" />
+<meta charset="UTF-8"/>
 <title>客户端</title>
-<link rel="stylesheet" th:href="@{../layui/css/layui.css}" media="all" />
-<link rel="stylesheet" th:href="@{../layui/css/layui.mobile.css}"
-	media="all" />
-<link rel="stylesheet" th:href="@{../loaders.css}" media="all" />
-<script th:src="@{../jquery-2.1.4.js}"></script>
-<script th:src="@{../jquery.min.js}"></script>
-<script th:src="@{../layui/layui.all.js}"></script>
-<script th:src="@{../layui/layui.js}"></script>
-<script th:src="@{../loaders.js}"></script>
+<link rel="stylesheet" th:href="@{/layui/css/layui.css}" media="all"/>
+<link rel="stylesheet" th:href="@{/layui/css/layui.mobile.css}"
+	  media="all"/>
+<link rel="stylesheet" th:href="@{/loaders.css}" media="all"/>
+<script th:src="@{/jquery.min.js}"></script>
+<script th:src="@{/jquery-2.1.4.js}"></script>
+<script th:src="@{/layui/layui.all.js}"></script>
+<script th:src="@{/layui/layui.js}"></script>
+<script th:src="@{/loaders.js}"></script>
 
 
 <style>
-.threed {
-	text-align: center;
-	color: mediumorchid;
-	-webkit-text-stroke: 1px black;
-	letter-spacing: 0.04em;
-	background-color: white;
-}
+	.threed {
+		text-align: center;
+		color: mediumorchid;
+		-webkit-text-stroke: 1px black;
+		letter-spacing: 0.04em;
+		background-color: white;
+	}
 </style>
 
 </head>
@@ -109,30 +109,30 @@
 	 	</div>
 	 </div>
 	<script type="text/javascript">
-	
+
 	var oHeight = $(document).height(); //浏览器当前的高度
-	   
-	   $(window).resize(function(){
-	 
+
+	$(window).resize(function(){
+
 	        if($(document).height() < oHeight){
-	         
+
 	        $("#footer").css("position","static");
 	    }else{
-	         
+
 	        $("#footer").css("position","absolute");
 	    }
-	        
+
 	   });
-	
+
 	layui.use('form', function () {
         var form = layui.form;
     });
-var ws = null;
-var username = $("#username").val();
+	var ws = null;
+	var username = $("#username").val();
 
-getOnline();
-var i=1;
-function test(){
+	getOnline();
+	var i=1;
+	function test(){
 	if(i==1){
 		
 		loaders_show();
@@ -143,8 +143,7 @@ function test(){
 	}
 }
 
-
-function upload(){
+	function upload(){
 	var formData = new FormData();
 	var file = document.getElementById("file1").files[0];
 	var filename ="";
@@ -177,16 +176,16 @@ function upload(){
 }
 
 
-function connect(){
+	function connect(){
 	
 	if(username!=null){
 	    $("#content").html('');
 		if ('WebSocket' in window){
-		       //ws = new WebSocket("ws://www.niezhiliang.com:8086/socketServer/"+$("#username").val());
+		       //ws = new WebSocket("ws://127.0.0.1:8086/socketServer/"+$("#username").val());
                ws = new WebSocket("ws://127.0.0.1:8086/socketServer/"+$("#username").val());
 		}    
 	    else if ('MozWebSocket' in window){
-	        //ws = new MozWebSocket("ws://www.niezhiliang.com:8086/socketServer/"+$("#username").val());
+	        //ws = new MozWebSocket("ws://127.0.0.1:8086/socketServer/"+$("#username").val());
             ws = new MozWebSocket("ws://127.0.0.1:8086/socketServer/"+$("#username").val());
 	    }
 	    else{
@@ -230,7 +229,7 @@ function connect(){
 	//loaders_hide();
 }    
 
-function getImg(filename){
+	function getImg(filename){
 	if(filename==""){
 		return "";
 	}
@@ -238,7 +237,7 @@ function getImg(filename){
 	'src="show?fileName='+filename+'">';	
 }
     
-function sendAll(){
+	function sendAll(){
 	username = $("#username").val();
 	   var msg = $("#writeMsg").val();
 	   if(msg==null)
@@ -267,7 +266,7 @@ function sendAll(){
 }
 
     
-function sendMsg() {    
+	function sendMsg() {
     ws.send($("#writeMsg").val());
     var content = $("#content").html();
     $("#content").html(content+'<div>\n' +
@@ -276,7 +275,7 @@ function sendMsg() {
         '                    <br/>');
 }    
 
-function getOnline(){
+	function getOnline(){
 	   $.ajax({
      method: 'POST',
      url: 'getOnline',
@@ -309,7 +308,7 @@ function getOnline(){
  });
 }
 
-	   var timer = setInterval(function(){
+	var timer = setInterval(function(){
 		   getOnline();
 		},10000);
 
@@ -325,7 +324,7 @@ function getOnline(){
 	}
 	   
 	   
-function getData(result){
+	function getData(result){
 	  if ((typeof result == 'object')
 			&& result.constructor == Object) {
 		data = result;
@@ -334,7 +333,7 @@ function getData(result){
 	}
 	  return data;
 }
-function test(){
+	function test(){
 	 $.ajax({
             method: 'get',
             url: '/matching',

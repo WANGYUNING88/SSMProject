@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,10 +34,18 @@ public class WebSocketController {
      * 客户端页面
      * @return
      */
-    @RequestMapping(value = "/index")
-    public String idnex() {
+    @RequestMapping(value = "/user")
+    public String user(Model model) {
+        int num = socketServer.getOnlineNum();
+        List<String> list = socketServer.getOnlineUsers();
+        model.addAttribute("num",num);
+        model.addAttribute("users",list);
+        return "user";
+    }
 
-        return "index";
+    @RequestMapping(value = "/user1")
+    public String user1(Model model) {
+        return "user1";
     }
 
     /**
@@ -51,15 +58,8 @@ public class WebSocketController {
     public String admin(Model model) {
         int num = socketServer.getOnlineNum();
         List<String> list = socketServer.getOnlineUsers();
-
         model.addAttribute("num",num);
         model.addAttribute("users",list);
-        System.out.println("****users****");
-        for(int i=0;i<list.size();i++) {
-        	System.out.println(list.get(i)+"");
-        }
-        System.out.println("****num****");
-        System.out.println(num);
         return "admin";
     }
     @RequestMapping(value = "getOnline")

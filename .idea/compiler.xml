@@ -10,6 +10,7 @@
         <module name="web01" />
         <module name="springboot_shiro" />
         <module name="helloworld" />
+        <module name="springbootwebsocket" />
         <module name="springboot-security" />
         <module name="ssmtest" />
         <module name="springmvcday01_01_start" />
@@ -30,6 +31,7 @@
       <module name="springboot-shiro" target="1.5" />
       <module name="springboot-shrio" target="1.5" />
       <module name="springboot_shiro" target="1.8" />
+      <module name="springbootwebsocket" target="1.8" />
       <module name="springmvcday01_01_start" target="1.8" />
       <module name="ssm-first" target="1.5" />
       <module name="ssmtest" target="8" />
@@ -45,6 +47,7 @@
       <module name="springboot-mybatis" options="-parameters" />
       <module name="springboot-security" options="-parameters" />
       <module name="springboot_shiro" options="-parameters" />
+      <module name="springbootwebsocket" options="-parameters" />
       <module name="web01" options="-parameters" />
     </option>
   </component>

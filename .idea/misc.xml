@@ -20,6 +20,7 @@
         <option value="$PROJECT_DIR$/springboot-security/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-shrio/pom.xml" />
         <option value="$PROJECT_DIR$/websocket/websocket/pom.xml" />
+        <option value="$PROJECT_DIR$/springbootwebsocket-master/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -28,5 +29,5 @@
       </set>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="JDK1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="false" project-jdk-name="JDK1.8" project-jdk-type="JavaSDK" />
 </project>

@@ -1,5 +1,6 @@
 package com.forrest.websocket.test;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -74,19 +75,21 @@ public class Test {
 //		Map<String ,Integer> map = new HashMap<String ,Integer>();
 //		map.put("1", 3);
 //		System.out.println(map.remove("1"));
-		int [] a1 = {0,0,0,0,0,0,0,0,0,0};
-		int [] a2 = {0,0,0,0,0,0,0,0,0,0};
-		int [] a3 = {0,0,0,2,0,0,0,0,0,0};
-		int [] a4 = {0,0,0,1,1,0,0,0,0,0};
-		int [] a5 = {0,0,0,2,1,2,0,0,1,0};
-		int [] a6 = {0,1,1,1,0,1,2,1,0,0};
-		int [] a7 = {0,0,1,2,2,1,2,2,0,0};
-		int [] a8 = {0,0,1,1,2,1,0,0,0,0};
-		int [] a9 = {0,1,0,2,1,2,0,0,0,0};
-		int [] a0 = {0,0,0,0,0,1,0,0,0,0};
-		int[][] a = {a1,a2,a3,a4,a5,a6,a7,a8,a9,a0};
-	//	System.out.println(GameUtil.isWin(a));
-		System.out.println(CheckWin(5,1,a));
-	}
+//		int [] a1 = {0,0,0,0,0,0,0,0,0,0};
+//		int [] a2 = {0,0,0,0,0,0,0,0,0,0};
+//		int [] a3 = {0,0,0,2,0,0,0,0,0,0};
+//		int [] a4 = {0,0,0,1,1,0,0,0,0,0};
+//		int [] a5 = {0,0,0,2,1,2,0,0,1,0};
+//		int [] a6 = {0,1,1,1,0,1,2,1,0,0};
+//		int [] a7 = {0,0,1,2,2,1,2,2,0,0};
+//		int [] a8 = {0,0,1,1,2,1,0,0,0,0};
+//		int [] a9 = {0,1,0,2,1,2,0,0,0,0};
+//		int [] a0 = {0,0,0,0,0,1,0,0,0,0};
+//		int[][] a = {a1,a2,a3,a4,a5,a6,a7,a8,a9,a0};
+//	//	System.out.println(GameUtil.isWin(a));
+//		System.out.println(CheckWin(5,1,a));
+
+
+    }
 
 }

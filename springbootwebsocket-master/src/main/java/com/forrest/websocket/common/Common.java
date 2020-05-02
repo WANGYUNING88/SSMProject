@@ -14,7 +14,7 @@ public class Common {
 	public static int[][] QIPAN =null;
 	public static String getUploadPath() throws FileNotFoundException {
 		File path = new File(ResourceUtils.getURL("classpath:").getPath());
-		File upload = new File(path.getAbsolutePath(),"static/upload/");
+		File upload = new File(path.getAbsolutePath(),"image/upload/");
 		if(!upload.exists()) upload.mkdirs();
 		System.out.println("upload url:"+upload.getAbsolutePath());
 		return upload.getAbsolutePath()+"/";

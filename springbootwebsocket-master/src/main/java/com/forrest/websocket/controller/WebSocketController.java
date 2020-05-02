@@ -71,12 +71,7 @@ public class WebSocketController {
 		Map<String,Object >map = new HashMap<String, Object>();
 		map.put("num", num);
 		map.put("list", list);
-        System.out.println("****users****");
-        for(int i=0;i<list.size();i++) {
-        	System.out.println(list.get(i)+"");
-        }
-        System.out.println("****num****");
-        System.out.println(num);
+
         response.setContentType("text/plain");
         PrintWriter pr = response.getWriter();
         JSONObject json = new JSONObject(map);

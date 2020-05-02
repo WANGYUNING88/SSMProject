@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
@@ -45,7 +46,12 @@ public class FileUploadController {
 			HttpServletResponse response) throws InterruptedException, FileNotFoundException { 
 		//上传成功或者失败的标志
 		boolean flag = false;
-		if (FileUtils.upload(file,Common.getUploadPath(), file.getOriginalFilename())) {
+		if (file==null){
+			return;
+		}
+		String[] names = file.getOriginalFilename().split("/|\\\\");
+		String filename = names[names.length-1];
+		if (FileUtils.upload(file,Common.getUploadPath(),filename)) {
 			// 上传成功，给出页面提示
 			
 		//	map = readImage(file.getOriginalFilename(),map);
@@ -57,7 +63,7 @@ public class FileUploadController {
 
 		// 显示图片
 		map.put("flag",flag);
-		map.put("fileName", file.getOriginalFilename());
+		map.put("fileName", filename);
 		PrintWriter out = null;
 		try {
 			response.reset();
@@ -68,9 +74,6 @@ public class FileUploadController {
 			e.printStackTrace();
 		}finally {
 			JSONObject json = new JSONObject(map);
-			System.out.println("***json****");
-			System.out.println(json.toJSONString());
-			System.out.println("***********");
 			if(out!=null) {
 	        	out.print(json);
 	        	out.flush();
@@ -86,6 +89,7 @@ public class FileUploadController {
 	 * @return
 	 */
 	@RequestMapping("show")
+	@ResponseBody
 	public ResponseEntity showPhotos(String fileName) {
 		System.out.println("显示图片");
 		ResponseEntity responseEntity;

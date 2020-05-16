@@ -16,6 +16,7 @@
       <module fileurl="file://$PROJECT_DIR$/springbootwebsocket-master/springbootwebsocket.iml" filepath="$PROJECT_DIR$/springbootwebsocket-master/springbootwebsocket.iml" />
       <module fileurl="file://$PROJECT_DIR$/ssm-test/ssmtest.iml" filepath="$PROJECT_DIR$/ssm-test/ssmtest.iml" />
       <module fileurl="file://$PROJECT_DIR$/vuejs/vuejs.iml" filepath="$PROJECT_DIR$/vuejs/vuejs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wang-es-api/wang-es-api.iml" filepath="$PROJECT_DIR$/wang-es-api/wang-es-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/web01/web01.iml" filepath="$PROJECT_DIR$/web01/web01.iml" />
     </modules>
   </component>

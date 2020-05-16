@@ -10,14 +10,15 @@
         <module name="web01" />
         <module name="springboot_shiro" />
         <module name="helloworld" />
-        <module name="springbootwebsocket" />
-        <module name="springboot-security" />
+        <module name="springboot-mybatis" />
+        <module name="wang-es-api" />
         <module name="ssmtest" />
         <module name="springmvcday01_01_start" />
-        <module name="springboot-data" />
+        <module name="springboot-security" />
         <module name="springboot-demo01" />
+        <module name="springbootwebsocket" />
+        <module name="springboot-data" />
         <module name="helloshrio" />
-        <module name="springboot-mybatis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -35,6 +36,7 @@
       <module name="springmvcday01_01_start" target="1.8" />
       <module name="ssm-first" target="1.5" />
       <module name="ssmtest" target="8" />
+      <module name="wang-es-api" target="1.8" />
       <module name="web01" target="1.8" />
       <module name="WebSocket" target="1.7" />
     </bytecodeTargetLevel>
@@ -48,6 +50,7 @@
       <module name="springboot-security" options="-parameters" />
       <module name="springboot_shiro" options="-parameters" />
       <module name="springbootwebsocket" options="-parameters" />
+      <module name="wang-es-api" options="-parameters" />
       <module name="web01" options="-parameters" />
     </option>
   </component>

@@ -7,22 +7,24 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="demo" />
-        <module name="web01" />
-        <module name="springboot_shiro" />
-        <module name="helloworld" />
-        <module name="springboot-mybatis" />
+        <module name="springboot-data" />
         <module name="wang-es-api" />
         <module name="ssmtest" />
-        <module name="springmvcday01_01_start" />
-        <module name="springboot-security" />
-        <module name="springboot-demo01" />
-        <module name="springbootwebsocket" />
-        <module name="springboot-data" />
         <module name="helloshrio" />
+        <module name="springboot-security" />
+        <module name="web01" />
+        <module name="springboot_shiro" />
+        <module name="springmvcday01_01_start" />
+        <module name="springbootwebsocket" />
+        <module name="elasticsearch-jd" />
+        <module name="springboot-demo01" />
+        <module name="springboot-mybatis" />
+        <module name="helloworld" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="demo" target="1.8" />
+      <module name="elasticsearch-jd" target="1.8" />
       <module name="helloshrio" target="1.5" />
       <module name="helloworld" target="1.8" />
       <module name="springboot-data" target="1.8" />
@@ -44,6 +46,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="demo" options="-parameters" />
+      <module name="elasticsearch-jd" options="-parameters" />
       <module name="helloworld" options="-parameters" />
       <module name="springboot-data" options="-parameters" />
       <module name="springboot-mybatis" options="-parameters" />

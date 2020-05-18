@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/SSMProject.iml" filepath="$PROJECT_DIR$/.idea/SSMProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/elasticsearch-jd/elasticsearch-jd.iml" filepath="$PROJECT_DIR$/elasticsearch-jd/elasticsearch-jd.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-shiro/hello-shiro/hello-shiro.iml" filepath="$PROJECT_DIR$/springboot-shiro/hello-shiro/hello-shiro.iml" />
       <module fileurl="file://$PROJECT_DIR$/vuejs/hello_world.iml" filepath="$PROJECT_DIR$/vuejs/hello_world.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-shrio/helloshrio/helloshrio.iml" filepath="$PROJECT_DIR$/springboot-shrio/helloshrio/helloshrio.iml" />

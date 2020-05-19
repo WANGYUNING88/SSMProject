@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="../js/vue.js"></script>
+<body>
+
+<div id="app">
+    <h1 v-if="ok">Yes</h1>
+    <h1 v-if="type=='a'">Yes</h1>
+    <h1 v-else>No</h1>
+    <li v-for="item in items">
+        {{item.message}}
+    </li>
+
+</div>
+
+<script type="text/javascript">
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            ok: true,
+            type: 'a',
+            items: [
+                {
+                    message: '王',
+                },
+                {
+                    message: '余',
+                },
+                {
+                    message: '柠',
+                },
+            ]
+        }
+    });
+</script>
+</body>
+</html>

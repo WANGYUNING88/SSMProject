@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="../js/vue.js"></script>
+<body>
+
+<div id="app" >
+    输入的文本：<textarea type="text" v-model="message"></textarea>
+    <h3>hello,{{message}}!</h3>
+    性别
+    <input type="radio" name="sex" value="0" v-model="sex">男
+    <input type="radio" name="sex" value="1" v-model="sex">女
+    <p>
+        选中了谁：{{sex}}
+    </p>
+
+    下拉框
+    <select v-model="selected">
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+    </select>
+    <p>
+        选中了谁：{{selected}}
+    </p>
+</div>
+
+<script type="text/javascript">
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            message: 'vue',
+            sex: '0',
+            selected: 'C'
+        }
+    });
+</script>
+</body>
+</html>

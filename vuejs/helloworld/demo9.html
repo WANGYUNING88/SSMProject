@@ -12,7 +12,7 @@
         <todo-title slot="todo-title" :title="title"></todo-title>
         <todo-items
                 slot="todo-items" v-for="(item,index) in todoItems"
-                :index="index" :item="item" @remove="removeItems(index)"></todo-items>
+                 :item="item" @remove="removeItems(index)"></todo-items>
     </todo>
     <!--    <ul>-->
     <!--        <li>Java</li>-->

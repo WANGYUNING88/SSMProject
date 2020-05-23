@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="../js/vue.js"></script>
+<body>
+
+<div id="app" >
+    <!-- 组件，传递给组件中的值，props接受 -->
+    <wang v-for="message in messages" v-bind:wyn="message"></wang>
+</div>
+
+<script type="text/javascript">
+    <!-- 定义一个vue组件 -->
+    Vue.component("wang",{
+        props: ['wyn'],
+       template:  "<li>{{wyn}}</li>"
+    });
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            messages:["hello,vue!","hello,java!","hello,db!"]
+        }
+    });
+</script>
+</body>
+</html>

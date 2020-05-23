@@ -1,0 +1,20 @@
+{
+  "name": "王余柠vue学习",
+  "url": "https://www.baidu.com/",
+  "page": 1,
+  "isNonProfit": true,
+  "address": {
+    "street": "冀州",
+    "city": "河北衡水",
+    "country": "中国"
+  },
+  "links": [
+    {
+      "name": "bilibili",
+      "url": "https://space.bilibili.com/23015231"
+    },{
+      "name": "GitHub",
+      "url": "https://github.com/WANGYUNING88"
+    }
+  ]
+}

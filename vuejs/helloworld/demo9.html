@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="https://lib.baomitu.com/vue/2.6.11/vue.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <todo>
+        <todo-title slot="todo-title" :title="title"></todo-title>
+        <todo-items
+                slot="todo-items" v-for="(item,index) in todoItems"
+                :index="index" :item="item" @remove="removeItems(index)"></todo-items>
+    </todo>
+    <!--    <ul>-->
+    <!--        <li>Java</li>-->
+    <!--        <li>html</li>-->
+    <!--        <li>mysql</li>-->
+    <!--    </ul>-->
+</div>
+
+<script type="text/javascript">
+    Vue.component("todo", {
+        template: '<div>'
+            + '<slot name="todo-title"></slot>' +
+            '<ul>' + '<slot name="todo-items"></slot>' + '</ul>'
+            + '</div>'
+    });
+    Vue.component("todo-title", {
+        props: ['title'],
+        template: '<div>{{title}}</div> '
+    });
+    Vue.component("todo-items", {
+        //只能绑定当前组件的方法
+        props: ['item','index'],
+        template: '<li>{{index}}>>{{item}} <button @click="remove">del</button></li> ',
+        methods: {
+            remove: function (index) {
+                this.$emit('remove',index);
+            }
+        }
+    });
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            message: "hello,vue",
+            title: "书籍表单",
+            todoItems: [
+                'java',
+                'html',
+                'db'
+            ]
+        },
+        methods: {
+            removeItems: function (index) {
+                console.log("删除了【"+this.todoItems[index]+"】🆗");
+                 this.todoItems.splice(index,1)//一次删除一个元素
+            }
+        }
+    });
+</script>
+</body>
+</html>

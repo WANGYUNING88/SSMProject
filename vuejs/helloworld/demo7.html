@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="https://lib.baomitu.com/vue/2.6.11/vue.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <div>{{info.name}}</div>
+    <div>{{info.address.street}}</div>
+    <div>
+        <li v-for="item in info.links">
+            <span>{{item.name}}</span>
+            <span>{{item.url}}</span>
+
+    </li></div>
+
+    <a v-bind:href="info.url">百度</a>
+</div>
+
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#app',
+        data() {
+            return {
+                //请求返回的参数合适，必须和json一样
+                info: {
+                    name: "",
+                    url: "",
+                    page: '',
+                    isNonProfit: true,
+                    address: {
+                        street: "",
+                        city: "",
+                        country: ""
+                    },
+                    links: [
+                        {
+                            name: "",
+                            url: ""
+                        },{
+                            name: "",
+                            url: ""
+                        }
+                    ]
+                }
+            }
+        },
+        mounted() {
+            //钩子函数
+            axios.get('../data.json').then(response => (this.info = (response.data)));
+        }
+    });
+</script>
+</body>
+</html>

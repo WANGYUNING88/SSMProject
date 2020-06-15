@@ -10,6 +10,12 @@ public class SpringbootMybatisApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SpringbootMybatisApplication.class, args);
+        System.out.println(
+                "     启动成功   \n" +
+                "   \\|/ ____ \\|/ \n" +
+                "    @~/ ,. \\~@  \n" +
+                "   /_( \\__/ )_\\ \n" +
+                "      \\__U_/   ");
     }
 
 }

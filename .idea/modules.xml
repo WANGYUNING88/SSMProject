@@ -10,12 +10,14 @@
       <module fileurl="file://$PROJECT_DIR$/springboot-shrio/helloshrio/helloshrio.iml" filepath="$PROJECT_DIR$/springboot-shrio/helloshrio/helloshrio.iml" />
       <module fileurl="file://$PROJECT_DIR$/vuejs/helloword.iml" filepath="$PROJECT_DIR$/vuejs/helloword.iml" />
       <module fileurl="file://$PROJECT_DIR$/helloworld/helloworld.iml" filepath="$PROJECT_DIR$/helloworld/helloworld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloworld/net_study/net_study.iml" filepath="$PROJECT_DIR$/helloworld/net_study/net_study.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-data/springboot-data.iml" filepath="$PROJECT_DIR$/springboot-data/springboot-data.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-demo01/springboot-demo01.iml" filepath="$PROJECT_DIR$/springboot-demo01/springboot-demo01.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-mybatis/springboot-mybatis.iml" filepath="$PROJECT_DIR$/springboot-mybatis/springboot-mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-security/springboot-security.iml" filepath="$PROJECT_DIR$/springboot-security/springboot-security.iml" />
       <module fileurl="file://$PROJECT_DIR$/springbootwebsocket-master/springbootwebsocket.iml" filepath="$PROJECT_DIR$/springbootwebsocket-master/springbootwebsocket.iml" />
       <module fileurl="file://$PROJECT_DIR$/ssm-test/ssmtest.iml" filepath="$PROJECT_DIR$/ssm-test/ssmtest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/net/study/study.iml" filepath="$PROJECT_DIR$/net/study/study.iml" />
       <module fileurl="file://$PROJECT_DIR$/vuejs/vuejs.iml" filepath="$PROJECT_DIR$/vuejs/vuejs.iml" />
       <module fileurl="file://$PROJECT_DIR$/wang-es-api/wang-es-api.iml" filepath="$PROJECT_DIR$/wang-es-api/wang-es-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/web01/web01.iml" filepath="$PROJECT_DIR$/web01/web01.iml" />

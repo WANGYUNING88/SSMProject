@@ -8,18 +8,18 @@
         <outputRelativeToContentRoot value="true" />
         <module name="demo" />
         <module name="springboot-data" />
-        <module name="wang-es-api" />
         <module name="ssmtest" />
         <module name="helloshrio" />
         <module name="springboot-security" />
         <module name="web01" />
-        <module name="springboot_shiro" />
+        <module name="wang-es-api" />
         <module name="springmvcday01_01_start" />
         <module name="springbootwebsocket" />
         <module name="elasticsearch-jd" />
         <module name="springboot-demo01" />
         <module name="springboot-mybatis" />
-        <module name="helloworld" />
+        <module name="springboot_shiro" />
+        <module name="net_study" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -27,6 +27,7 @@
       <module name="elasticsearch-jd" target="1.8" />
       <module name="helloshrio" target="1.5" />
       <module name="helloworld" target="1.8" />
+      <module name="net_study" target="1.7" />
       <module name="springboot-data" target="1.8" />
       <module name="springboot-demo01" target="1.8" />
       <module name="springboot-mybatis" target="1.8" />

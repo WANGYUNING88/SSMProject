@@ -23,6 +23,7 @@
         <option value="$PROJECT_DIR$/springbootwebsocket-master/pom.xml" />
         <option value="$PROJECT_DIR$/wang-es-api/pom.xml" />
         <option value="$PROJECT_DIR$/elasticsearch-jd/pom.xml" />
+        <option value="$PROJECT_DIR$/POI/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

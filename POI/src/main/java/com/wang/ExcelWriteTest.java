@@ -158,7 +158,7 @@ public class ExcelWriteTest {
     public void testWrite07BigDatas() throws IOException {
         long begin = System.currentTimeMillis();
         //1.创建一个工作簿
-        Workbook workbook = new ();
+        Workbook workbook = new SXSSFWorkbook();
         //2.创建一个工作表
         Sheet sheet = workbook.createSheet("测试表");
 
@@ -166,7 +166,7 @@ public class ExcelWriteTest {
         Cell cell = null;
         for (int rowNo = 0 ;rowNo < 65536 ; rowNo++){ //超过65536的异常Invalid row number (65536) outside allowable range (0..65535)
             row = sheet.createRow(rowNo);
-            for (int cellNo = 0 ; celSXSSFWorkbooklNo<10 ;cellNo++){
+            for (int cellNo = 0 ; cellNo<10 ;cellNo++){
                 cell = row.createCell(cellNo);
                 cell.setCellValue(rowNo+" "+cellNo);
             }

@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="net_study" />
+        <module name="thread_progress" />
         <module name="demo" />
         <module name="springboot-data" />
         <module name="ssmtest" />
@@ -41,6 +42,8 @@
       <module name="springmvcday01_01_start" target="1.8" />
       <module name="ssm-first" target="1.5" />
       <module name="ssmtest" target="8" />
+      <module name="thread" target="1.5" />
+      <module name="thread_progress" target="1.7" />
       <module name="wang-es-api" target="1.8" />
       <module name="web01" target="1.8" />
       <module name="WebSocket" target="1.7" />
